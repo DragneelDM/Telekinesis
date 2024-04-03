@@ -1,40 +1,67 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEnding : MonoBehaviour
 {
-    public float FadeDuration = 1f;
-    public float DisplayImageDuration = 1f;
-    public GameObject Player;
-    public CanvasGroup ExitBackgroundImageCanvasGroup;
+    public float fadeDuration = 1f;
+    public float displayImageDuration = 1f;
+    public GameObject player;
+    public CanvasGroup exitBackgroundImageCanvasGroup;
+    public AudioSource exitAudio;
+    public CanvasGroup caughtBackgroundImageCanvasGroup;
+    public AudioSource caughtAudio;
 
-    private bool _isPlayerAtExit;
-    private float _timer;
-
+    private bool m_IsPlayerAtExit;
+    private bool m_IsPlayerCaught;
+    private float m_Timer;
+    private bool m_HasAudioPlayed;
+    
     private void OnTriggerEnter (Collider other)
     {
-        if(other.TryGetComponent<PlayerMovement>(out PlayerMovement player))
+        if (other.gameObject == player)
         {
-            _isPlayerAtExit = true;
+            m_IsPlayerAtExit = true;
         }
+    }
+
+    public void CaughtPlayer ()
+    {
+        m_IsPlayerCaught = true;
     }
 
     private void Update ()
     {
-        if(_isPlayerAtExit)
+        if (m_IsPlayerAtExit)
         {
-            EndLevel ();
+            EndLevel (exitBackgroundImageCanvasGroup, false, exitAudio);
+        }
+        else if (m_IsPlayerCaught)
+        {
+            EndLevel (caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
     }
 
-    private void EndLevel ()
+    private void EndLevel (CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
-        _timer += Time.deltaTime;
-
-        ExitBackgroundImageCanvasGroup.alpha = _timer / FadeDuration;
-
-        if(_timer > FadeDuration + DisplayImageDuration)
+        if (!m_HasAudioPlayed)
         {
-            Application.Quit ();
+            audioSource.Play();
+            m_HasAudioPlayed = true;
+        }
+            
+        m_Timer += Time.deltaTime;
+        imageCanvasGroup.alpha = m_Timer / fadeDuration;
+
+        if (m_Timer > fadeDuration + displayImageDuration)
+        {
+            if (doRestart)
+            {
+                SceneManager.LoadScene (0);
+            }
+            else
+            {
+                Application.Quit ();
+            }
         }
     }
 }

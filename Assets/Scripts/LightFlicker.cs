@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -21,25 +19,25 @@ public class LightFlicker : MonoBehaviour
     public float flickerDuration = 0.075f;
     public AnimationCurve intensityCurve;
 
-    Material m_FlickeringMaterial;
-    Color m_EmissionColor;
-    float m_Timer;
-    float m_FlickerLightIntensity;
+    private Material m_FlickeringMaterial;
+    private Color m_EmissionColor;
+    private float m_Timer;
+    private float m_FlickerLightIntensity;
     
-    static readonly int k_EmissionColorID = Shader.PropertyToID (k_EmissiveColorName);
+    private static readonly int k_EmissionColorID = Shader.PropertyToID (k_EmissiveColorName);
     
-    const string k_EmissiveColorName = "_EmissionColor";
-    const string k_EmissionName = "_Emission";
-    const float k_LightIntensityToEmission = 2f / 3f;
+    private const string k_EmissiveColorName = "_EmissionColor";
+    private const string k_EmissionName = "_Emission";
+    private const float k_LightIntensityToEmission = 2f / 3f;
 
-    void Start()
+    private void Start()
     {
         m_FlickeringMaterial = flickeringRenderer.material;
         m_FlickeringMaterial.EnableKeyword(k_EmissionName);
         m_EmissionColor = m_FlickeringMaterial.GetColor(k_EmissionColorID);
     }
 
-    void Update()
+    private void Update()
     {
         m_Timer += Time.deltaTime;
 
@@ -59,14 +57,14 @@ public class LightFlicker : MonoBehaviour
         m_FlickeringMaterial.SetColor (k_EmissionColorID, m_EmissionColor * m_FlickerLightIntensity * k_LightIntensityToEmission);
     }
 
-    void ChangeRandomFlickerLightIntensity ()
+    private void ChangeRandomFlickerLightIntensity ()
     {
         m_FlickerLightIntensity = Random.Range(lightIntensityMin, lightIntensityMax);
 
         m_Timer = 0f;
     }
 
-    void ChangeAnimatedFlickerLightIntensity ()
+    private void ChangeAnimatedFlickerLightIntensity ()
     {
         m_FlickerLightIntensity = intensityCurve.Evaluate (m_Timer);
 
@@ -88,7 +86,7 @@ public class LightFlickerEditor : Editor
     SerializedProperty m_FlickerDurationProp;
     SerializedProperty m_IntensityCurveProp;
 
-    void OnEnable ()
+    private void OnEnable ()
     {
         m_ScriptProp = serializedObject.FindProperty ("m_Script");
         m_FlickeringLightProp = serializedObject.FindProperty ("flickeringLight");
@@ -126,13 +124,5 @@ public class LightFlickerEditor : Editor
 
         serializedObject.ApplyModifiedProperties ();
     }
-
-    /*public Light flickeringLight;
-    public Renderer flickeringRenderer;
-    public FlickerMode flickerMode;
-    public float lightIntensityMin = 1.25f;
-    public float lightIntensityMax = 2.25f;
-    public float flickerDuration = 0.075f;
-    public AnimationCurve intensityCurve;*/
 }
 #endif
