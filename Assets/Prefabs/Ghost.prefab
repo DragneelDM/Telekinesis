@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8108731bac5a041488721ca9caede9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NavMeshAgent: {fileID: 8811849449314530120}
-  Waypoints:
+  navMeshAgent: {fileID: 8811849449314530120}
+  waypoints:
   - {fileID: 0}
   - {fileID: 0}
 --- !u!82 &6892219778463437691

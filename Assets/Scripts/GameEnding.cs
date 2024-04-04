@@ -18,7 +18,7 @@ public class GameEnding : MonoBehaviour
     
     private void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject == player)
+        if (other.GetComponent<PlayerMovement>() != null)
         {
             m_IsPlayerAtExit = true;
         }

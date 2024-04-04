@@ -389,6 +389,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
         type: 3}
+      propertyPath: waypoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
       propertyPath: Waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 749802880}
@@ -405,6 +410,26 @@ PrefabInstance:
     - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
         type: 3}
       propertyPath: Waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 2117326892}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 749802880}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1805208558}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 795467765}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 2117326892}
     m_RemovedComponents: []
@@ -4407,6 +4432,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4081224201907584173, guid: f7f3452a91dce214d8eaf4246b4f4d5a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.662
+      objectReference: {fileID: 0}
     - target: {fileID: 6678636303652335884, guid: f7f3452a91dce214d8eaf4246b4f4d5a,
         type: 3}
       propertyPath: Player
@@ -4417,6 +4447,11 @@ PrefabInstance:
       propertyPath: GameEnding
       value: 
       objectReference: {fileID: 1313567823}
+    - target: {fileID: 7596434106093404930, guid: f7f3452a91dce214d8eaf4246b4f4d5a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4788,6 +4823,16 @@ PrefabInstance:
       propertyPath: Waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 895364434}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 222905550}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 895364434}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4973,6 +5018,16 @@ PrefabInstance:
     - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
         type: 3}
       propertyPath: Waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1285780035}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 760517214}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 1285780035}
     m_RemovedComponents: []
@@ -7304,6 +7359,16 @@ PrefabInstance:
     - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
         type: 3}
       propertyPath: Waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 213086778}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 680363070}
+    - target: {fileID: 4777549169503669669, guid: ccaece4cc006cc54ca32aa8bb5e4ee2c,
+        type: 3}
+      propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 213086778}
     m_RemovedComponents: []
