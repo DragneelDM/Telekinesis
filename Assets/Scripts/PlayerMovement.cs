@@ -1,54 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float turnSpeed = 20f;
+    private float _horizontal;
+    private float _vertical;
+    private Quaternion _rotation = Quaternion.identity;
+    private Vector3 _direction;
+    [SerializeField] private float _turnSpeed = 20f;
+    [SerializeField] private Rigidbody _rigidBody;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _audioSource;
 
-    private Animator m_Animator;
-    private Rigidbody m_Rigidbody;
-    private AudioSource m_AudioSource;
-    private Vector3 m_Movement;
-    private Quaternion m_Rotation = Quaternion.identity;
-
-    private void Start ()
+    
+    void Update()
     {
-        m_Animator = GetComponent<Animator> ();
-        m_Rigidbody = GetComponent<Rigidbody> ();
-        m_AudioSource = GetComponent<AudioSource> ();
+        _horizontal = Input.GetAxis("Horizontal");
+        _vertical = Input.GetAxis("Vertical");
+
+        _direction.Set(_horizontal, 0, _vertical);
+        _direction.Normalize();
+
+        bool horizontalInput = !Mathf.Approximately(_horizontal, 0f);
+        bool verticalInput = !Mathf.Approximately(_vertical, 0f);
+
+        bool isWalking = horizontalInput || verticalInput;
+        _animator.SetBool("IsWalking", isWalking);
+        
+        Vector3 desiredForward = Vector3.RotateTowards(transform.forward, _direction, -_turnSpeed * Time.deltaTime, 0f);
+        _rotation = Quaternion.LookRotation(desiredForward);
     }
 
-    private void FixedUpdate ()
+    private void OnAnimatorMove()
     {
-        float horizontal = Input.GetAxis ("Horizontal");
-        float vertical = Input.GetAxis ("Vertical");
-        
-        m_Movement.Set(horizontal, 0f, vertical);
-        m_Movement.Normalize ();
-
-        bool hasHorizontalInput = !Mathf.Approximately (horizontal, 0f);
-        bool hasVerticalInput = !Mathf.Approximately (vertical, 0f);
-        bool isWalking = hasHorizontalInput || hasVerticalInput;
-        m_Animator.SetBool ("IsWalking", isWalking);
-        
-        if (isWalking)
-        {
-            if (!m_AudioSource.isPlaying)
-            {
-                m_AudioSource.Play();
-            }
-        }
-        else
-        {
-            m_AudioSource.Stop ();
-        }
-
-        Vector3 desiredForward = Vector3.RotateTowards (transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
-        m_Rotation = Quaternion.LookRotation (desiredForward);
-    }
-
-    private void OnAnimatorMove ()
-    {
-        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
-        m_Rigidbody.MoveRotation (m_Rotation);
+        _rigidBody.MovePosition(_rigidBody.position + _direction * _animator.deltaPosition.magnitude);
+        _rigidBody.MoveRotation(_rotation);
     }
 }
