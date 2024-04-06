@@ -2,7 +2,7 @@
 
 Welcome to John Lemon's Haunted Jaunt! This is a 3D stealth game where you take control of John Lemon, who must hide from ghosts and escape from a haunted room. Use your stealth skills to avoid detection and find your way out.
 
-Playable Link here: [Online](#https://outscal.com/assassinisnotme/game/play-john-lemon-escape-game). or I best recommend Download [Here](https://github.com/DragneelDM/Telekinesis/releases/download/Game/Game.Jam.Build.PC.zip).
+Playable Link here: [Online](#https://outscal.com/assassinisnotme/game/play-john-lemon-escape-game). or I best recommend Download [Here](https://github.com/DragneelDM/Telekinesis/releases/download/Game/Playable.Build.zip).
 
 ## Table of Contents
 
