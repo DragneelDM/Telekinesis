@@ -34,4 +34,14 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(_direction * _speed * Time.deltaTime, Space.World);
     }
+
+    public void SetToIdle()
+    {
+        _animator.SetBool("IsWalking", false);
+    }
+
+    public void ChangeYAxis(float newValue)
+    {
+        _defaultYaxis = newValue;
+    }
 }

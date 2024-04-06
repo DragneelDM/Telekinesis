@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4537680070636355400}
   - component: {fileID: 8012339831908040935}
-  - component: {fileID: 6554198052032361193}
+  - component: {fileID: 106538300873037572}
   m_Layer: 0
   m_Name: PointOfView
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!136 &8012339831908040935
 CapsuleCollider:
@@ -56,7 +56,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 2
   m_Center: {x: 0.62, y: 0, z: 1}
---- !u!114 &6554198052032361193
+--- !u!114 &106538300873037572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,8 +65,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2285155527225744633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc10c9bf3e2ee941b949586e3ee1e49, type: 3}
+  m_Script: {fileID: 11500000, guid: 74e4bc3956e1f1d4ea08c9a82f621495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  GameEnding: {fileID: 0}
+  levelManager: {fileID: 0}
