@@ -1,4 +1,4 @@
-# John Lemon's Haunted Jaunt - 3D Stealth Game
+# John Lemon Escape of the Becky
 
 Welcome to John Lemon's Haunted Jaunt! This is a 3D stealth game where you take control of John Lemon, who must hide from ghosts and escape from a haunted room. Use your stealth skills to avoid detection and find your way out.
 
@@ -13,7 +13,7 @@ Playable Link here: [Online](#https://outscal.com/assassinisnotme/game/play-john
 
 ## Description
 
-John Lemon's Haunted Jaunt is a Unity game project inspired by classic stealth games. Navigate through the haunted room, avoid the roaming ghosts, and reach the exit to win the game. The game features atmospheric visuals and challenging stealth mechanics.
+John was Invited to his party. Unbeknownst to him, Trouble awaits.
 
 ## Features
 
@@ -33,3 +33,9 @@ John Lemon's Haunted Jaunt is a Unity game project inspired by classic stealth g
 4. You're ready to play!
 
 
+## MY Footnote
+
+ John Lemon is a Game. Very nice game......
+
+Lol, With all seriousness. This was a very personal project because of how the development put me through hell for very mediocre reasons. I Learnt Timelines during the development process and this game will have more meaning and depth in
+the future when we look back at it and remember.
